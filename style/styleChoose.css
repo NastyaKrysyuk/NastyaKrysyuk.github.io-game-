@@ -1,0 +1,35 @@
+input{
+  display: none;
+}
+.choose label{
+  margin: 1rem;
+}
+.text-content{
+  font-size: 3rem;
+  margin-bottom: 1em;
+  text-transform: uppercase;
+  text-align: center;
+}
+.choose,#wrap-records{
+  border: 2px solid #7757b171;
+  border-radius: 1rem;
+  padding: 1rem 8rem;
+  text-align: center;
+}
+form{
+  margin-bottom: 4rem;
+}
+.background-img{
+  width: 200px;
+  height: 150px;
+}
+input[type=radio]:checked + label img{
+  transform: scale(1.2);
+  border: 4px solid #7757b171;
+  border-radius: 1rem;
+}
+#masInfo{
+  position: absolute;
+display: none;
+color: aliceblue;
+}

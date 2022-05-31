@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  align-items: center;
+  height: 100vh;
+  color: white;
+  font-family: fantasy;
+}
+
+/*animation svg*/
+object {
+  animation: pulsing 2s infinite;
+  transform: translateZ(0);
+}
+
+@keyframes pulsing {
+  0% {
+
+    transform: scale(1, 1)
+  }
+
+  50% {
+
+    transform: scale(0.9, 0.9);
+  }
+
+  100% {
+
+    transform: scale(1, 1);
+  }
+}
+
+
+/*animation background*/
+.stars, .twinkling {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.stars {
+  background: rgb(0, 0, 0) url('./img/stars.png') repeat top center;
+  z-index: -2;
+}
+
+.twinkling {
+  background-image: url("./img/twinkling.png");
+  z-index: -1;
+  animation: 3s twinkle infinite;
+  animation-timing-function: linear;
+  transform: translateZ(0);
+}
+
+@keyframes twinkle {
+  from {
+    background-position: 100px
+  }
+
+  to {
+    background-position: -100px
+  }
+}
+
+/*nav*/
+.main-nav__items li{
+  margin-bottom: 0.9em;
+  text-align: center;
+  list-style: none;
+  transition: all 1s ease;
+}
+.main-nav__items li a,a {
+  padding: 0.2em;
+  margin: 0.5em;
+  color: white;
+  line-height: 1.4em;
+  text-align: center;
+  font-size: 2.2em;
+  border: 1px solid #7757b171;
+  border-radius: 15px;
+  background-color: #7757b171;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.main-nav__items li:hover a{
+  border: 3px solid #b3a8c971;
+}
+
+#wrap-records{
+  margin-bottom: 1em;
+  font-size: 1.2em;
+  line-height: 1.5em;
+}

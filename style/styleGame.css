@@ -1,0 +1,51 @@
+    body {
+      background-color: #d0f9ff;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+
+    }
+
+    canvas {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      -o-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50%, -50%);
+    }
+
+    .score, .lives {
+      top: 0;
+      width: 15%;
+      color: #ffffff;
+      position: absolute;
+      font-size: 2vw;
+      font-family: fantasy;
+      border: 1px solid;
+      border-radius: 21px;
+      margin: 24px;
+      background-color: #ffffff75;
+      padding: 12px;
+      vertical-align: middle;
+      right: 0;
+    }
+
+    .but-back {
+      left: 50%;
+      transform: translate(-70%);
+    }
+
+    .lives {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      left: 0;
+    }
+
+    .lives img {
+      width: 20%;
+      margin: 0 10px;
+    }
