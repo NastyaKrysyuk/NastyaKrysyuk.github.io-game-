@@ -20,13 +20,13 @@
     .score, .lives {
       top: 0;
       width: 15%;
-      color: #463c3c;
+      color: #ffffff;
       position: absolute;
       font-size: 2vw;
       font-family: fantasy;
       border-radius: 21px;
       margin: 24px;
-      background-color: #ffffff75;
+      background-color: #b3a8c963;
       padding: 12px;
       vertical-align: middle;
       right: 0;
