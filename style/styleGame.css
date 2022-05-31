@@ -20,11 +20,10 @@
     .score, .lives {
       top: 0;
       width: 15%;
-      color: #ffffff;
+      color: #463c3c;
       position: absolute;
       font-size: 2vw;
       font-family: fantasy;
-      border: 1px solid;
       border-radius: 21px;
       margin: 24px;
       background-color: #ffffff75;
