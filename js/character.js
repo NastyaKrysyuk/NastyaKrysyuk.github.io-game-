@@ -69,6 +69,8 @@ game.character = {
       game.ctx.drawImage(game.sprites.shot, fire.x, fire.y, 20, 20);
     });
     game.ctx.drawImage(game.sprites[localStorage.getItem("character")], this.moveX, this.moveY, 50, 50);
+    if (this.isProtected == true) {
     game.ctx.drawImage(game.sprites.shield, 192 * Math.floor(this.animx), 192 * Math.floor(this.animy), 192, 192, this.moveX - 15, this.moveY - 10, 80, 80);
+    }
   }
 }
