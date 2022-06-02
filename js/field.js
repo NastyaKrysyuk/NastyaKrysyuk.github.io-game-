@@ -1,4 +1,4 @@
-import {game} from './game.js';
+import { game } from './game.js';
 
 game.field = {
   height: 13,
@@ -35,7 +35,7 @@ game.field = {
 
   createObject(typeObj, obj) {
     this.aster.push({
-      x: Math.floor(this.offsetX + Math.random() * ((this.offsetX + this.width * game.sprites.cell.width) - game.sprites.asteroid.width / 2  - this.offsetX)),
+      x: Math.floor(this.offsetX + Math.random() * ((this.offsetX + this.width * game.sprites.cell.width) - game.sprites.asteroid.width / 2 - this.offsetX)),
       y: this.offsetY,
       angle: 0,
       dxangle: Math.random() * 0.2 - 0.1,
@@ -46,7 +46,7 @@ game.field = {
     });
   },
 
-//условие столкновения объектов
+  //условие столкновения объектов
   collides(obj1X, obj1Y, obj2X, obj2Y, obj1H, obj1W, obj2H, obj2W) {
     return obj1X < obj2X + obj2W / 3 &&
       obj1X + obj1W / 3 > obj2X &&
@@ -54,7 +54,7 @@ game.field = {
       obj1H / 3 + obj1Y > obj2Y
   },
 
-//удалить после столкновения
+  //удалить после столкновения
   deleteObject(objNum1, objNum2) {
     this.expl.push({
       x: this.aster[objNum1].x,
@@ -127,7 +127,7 @@ game.field = {
           }
         }
       }
-      if (this.aster[i].del == 1) this.aster.splice(i, 1);
+      if (this.aster[i].del === 1) this.aster.splice(i, 1);
     }
 
     //Анимация взрывов

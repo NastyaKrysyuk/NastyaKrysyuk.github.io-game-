@@ -1,4 +1,4 @@
-import { switchToMain } from './SPA.js';
+import { switchToMain } from './spa.js';
 
 export let game = {
   isStarted: false,
@@ -108,7 +108,7 @@ export let game = {
       this.sprites[key].addEventListener('load', onAssetLoad);
     }
   },
-  
+
   reset() {
     this.field.aster = [];
     this.field.expl = [];
@@ -168,13 +168,12 @@ export let game = {
   },
 
   asterExploded() {
-    var score = this.score++;
-    document.getElementById('score').textContent = score;
+    document.getElementById('score').textContent = this.score++;
   },
 
   bonusExploded() {
-    var container = document.querySelector('.lives');
-    var addLife = document.createElement('img');
+    let container = document.querySelector('.lives');
+    let addLife = document.createElement('img');
     addLife.src = "img/life.png";
     container.appendChild(addLife);
   },
@@ -200,8 +199,12 @@ export let game = {
     let obj = {};
     let name;
     do {
-      name = prompt("Game Over:(\nPlease, enter your name!", "");
-    } while (!name)
+      name = prompt("Game Over:(\nPlease, enter your name!\nYour name must be between 3 and 10 symbols", "");
+      if (name === null) {
+        alert("Your score has not been saved :(");
+        switchToMain();
+      }
+    } while (name.length < 3 || name.length > 10)
     obj["name"] = name;
     obj["score"] = this.score;
     let playersRef = firebase.database().ref("list/");

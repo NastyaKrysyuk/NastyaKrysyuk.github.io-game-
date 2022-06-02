@@ -1,4 +1,4 @@
-import {game} from './game.js';
+import { game } from './game.js';
 
 game.character = {
   moveX: 0,
@@ -6,11 +6,11 @@ game.character = {
   fire: [],
   animx: 0,
   animy: 0,
-  isProtected:false,
+  isProtected: false,
 
   //координаты героя при загрузке
   init() {
-    this.moveX = game.field.offsetX + (game.field.width * game.sprites.cell.width) / 2 -20;
+    this.moveX = game.field.offsetX + (game.field.width * game.sprites.cell.width) / 2 - 20;
     this.moveY = game.field.offsetY + game.field.height * game.sprites.cell.height - game.sprites[localStorage.getItem("character")].height / 2;
   },
 
@@ -39,7 +39,7 @@ game.character = {
     }
   },
 
-  start(offsetX,offsetY) {
+  start(offsetX, offsetY) {
     this.moveX = offsetX;
     if (this.moveX <= game.field.offsetX) {
       this.moveX = game.field.offsetX;
@@ -47,9 +47,9 @@ game.character = {
       this.moveX = game.field.offsetX + game.field.width * game.sprites.cell.width - game.sprites[localStorage.getItem("character")].width / 2
     }
 
-    if(offsetY>game.field.offsetY*2){
+    if (offsetY > game.field.offsetY * 2) {
       game.canvas.style.cursor = "none";
-    }else{
+    } else {
       game.canvas.style.cursor = "pointer";
     }
   },
@@ -69,6 +69,8 @@ game.character = {
       game.ctx.drawImage(game.sprites.shot, fire.x, fire.y, 20, 20);
     });
     game.ctx.drawImage(game.sprites[localStorage.getItem("character")], this.moveX, this.moveY, 50, 50);
-    game.ctx.drawImage(game.sprites.shield, 192 * Math.floor(this.animx), 192 * Math.floor(this.animy), 192, 192, this.moveX - 15, this.moveY - 10, 80, 80);
+    if (this.isProtected == true) {
+      game.ctx.drawImage(game.sprites.shield, 192 * Math.floor(this.animx), 192 * Math.floor(this.animy), 192, 192, this.moveX - 15, this.moveY - 10, 80, 80);
+    }
   }
 }

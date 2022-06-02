@@ -99,7 +99,19 @@ object {
 }
 
 #wrap-records{
-  margin-bottom: 1em;
+  font-size: 1.8em;
+  line-height: 1.3em;
+  margin-bottom: 0.5em ;
+  text-transform: capitalize;
+}
+
+#wrap-records span{
+  margin: 0 0.5em;
   font-size: 1.2em;
-  line-height: 1.5em;
+}
+
+#wrap-records h1+p::after{
+  content: "\1F451";
+  position: absolute;
+  margin-left: 0.3em;
 }
